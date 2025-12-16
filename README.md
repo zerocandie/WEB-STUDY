@@ -6,15 +6,15 @@
 ## 🔗 Ссылки на лабораторные работы
 
 - **Лабораторная работа №1**  
-  https://zerocandie.github.io/WEB-STUDY/1laba/
+  https://zerocandie.github.io/WEB-STUDY/1laba/index.html
 
 - **Лабораторная работа №2**  
-  https://zerocandie.github.io/WEB-STUDY/2laba/
+  https://zerocandie.github.io/WEB-STUDY/2laba/index.html
 
 - **Лабораторная работа №4**  
-  https://zerocandie.github.io/REPO/4laba/
+  https://zerocandie.github.io/REPO/4laba/index.html
 
 - **Лабораторная работа №4**  
-  https://zerocandie.github.io/REPO/5laba/
+  https://zerocandie.github.io/REPO/5laba/index.html
 
-## 🗂 Структура репозитори
+
