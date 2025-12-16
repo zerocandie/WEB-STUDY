@@ -12,9 +12,9 @@
   https://zerocandie.github.io/WEB-STUDY/2laba/dist/CALC.html
 
 - **Лабораторная работа №4**  
-  https://zerocandie.github.io/REPO/4laba/index.html
+  https://zerocandie.github.io/WEB-STUDY/4laba/index.html
 
 - **Лабораторная работа №4**  
-  https://zerocandie.github.io/REPO/5laba/index.html
+  https://zerocandie.github.io/WEB-STUDY/5laba/index.html
 
 
