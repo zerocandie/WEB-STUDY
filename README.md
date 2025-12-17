@@ -6,18 +6,18 @@
 ## 🔗 Ссылки на лабораторные работы
 
 - **Лабораторная работа №1**  
-  https://zerocandie.github.io/WEB-STUDY/1laba/Calc.html
+  [links](https://zerocandie.github.io/WEB-STUDY/1laba/Calc.html)
 
 - **Лабораторная работа №2**  
-  https://zerocandie.github.io/WEB-STUDY/2laba/dist/Calc.html
+ [links](https://zerocandie.github.io/WEB-STUDY/2laba/dist/Calc.html)
   
 - **Лабораторная работа №3**
-  https://zerocandie.github.io/WEB-STUDY/3laba/index.html
+- [links](https://zerocandie.github.io/WEB-STUDY/3laba/index.html)
 
 - **Лабораторная работа №4**  
-  https://zerocandie.github.io/WEB-STUDY/4laba/index.html
+  [links](https://zerocandie.github.io/WEB-STUDY/4laba/index.html)
 
 - **Лабораторная работа №4**  
-  https://zerocandie.github.io/WEB-STUDY/5laba/index.html
+  [links](https://zerocandie.github.io/WEB-STUDY/5laba/index.html)
 
 
