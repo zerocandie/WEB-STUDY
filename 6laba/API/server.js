@@ -1,7 +1,6 @@
 // API/server.js
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 
 // Импорты
 const peopleRouter = require('./internal/people/router');
@@ -9,9 +8,10 @@ const peopleRouter = require('./internal/people/router');
 const app = express();
 
 app.use(express.json({ limit: '5mb' })); 
-app.use(express.static(path.join(__dirname, '..', 'front')));
+app.use(express.static(path.join(__dirname, '..', 'front'))); // ← отдаёт CSS, JS, assets
 
 
+// POST /api/people — с base64
 app.post('/api/people', (req, res) => {
   try {
     const { name, role, description, photoBase64 } = req.body;
@@ -20,7 +20,6 @@ app.post('/api/people', (req, res) => {
       return res.status(400).json({ error: 'Все поля обязательны' });
     }
 
-    
     if (!photoBase64.startsWith('data:image/')) {
       return res.status(400).json({ error: 'Фото должно быть в формате base64' });
     }
@@ -43,8 +42,10 @@ app.post('/api/people', (req, res) => {
   }
 });
 
-
 app.use('/api/people', peopleRouter);
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'front', 'index.html'));
+});
 
 module.exports = app;
