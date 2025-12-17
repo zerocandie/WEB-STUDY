@@ -6,44 +6,38 @@ class App {
     constructor() {
         this.root = document.getElementById('app');
         this.currentPage = null;
-        this.init();
+        window.addEventListener('hashchange', () => this.handleRoute());
+        this.handleRoute();
     }
 
-    init() {
-        window.addEventListener('hashchange', this.handleRoute.bind(this));
-        this.handleRoute(); // Загрузка при старте
+    handleRoute() {
+        const hash = window.location.hash;
+        if (hash === '' || hash === '#people') {
+            this.showMainPage();
+        } else if (hash.startsWith('#person/')) {
+            this.showPersonPage();
+        } else if (hash === '#add-person') {
+            this.showAddPersonPage();
+        } else {
+            this.showMainPage();
+        }
     }
-
-    // В классе App
-handleRoute() {
-    const hash = window.location.hash;
-
-    if (hash === '' || hash === '#people' || hash === '#') {
-        this.showMainPage();
-    } else if (hash.startsWith('#person/')) {
-        this.showPersonPage();
-    } else if (hash === '#add-person') {
-    this.showAddPersonPage();
-    } else {
-        this.showMainPage();
-    }
-}
-
-showAddPersonPage() {
-    if (this.currentPage) this.currentPage = null;
-    this.currentPage = new AddPersonPage(this.root);
-    this.currentPage.render();
-}
 
     showMainPage() {
-        if (this.currentPage) this.currentPage = null;
+        this.currentPage?.destroy?.();
         this.currentPage = new MainPage(this.root);
         this.currentPage.render();
     }
 
     showPersonPage() {
-        if (this.currentPage) this.currentPage = null;
+        this.currentPage?.destroy?.();
         this.currentPage = new PersonPage(this.root);
+        this.currentPage.render();
+    }
+
+    showAddPersonPage() {
+        this.currentPage?.destroy?.();
+        this.currentPage = new AddPersonPage(this.root);
         this.currentPage.render();
     }
 }
