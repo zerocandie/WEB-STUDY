@@ -1,22 +1,34 @@
-// internal/people/PeopleRepository.js
-const { DBConnector } = require('../../modules/DBConnector');
+// API/internal/people/PeopleRepository.js
+const fs = require('fs');
+const path = require('path');
 
-class PeopleRepository {
-    static db = new DBConnector('people.json');
+// Путь к people.json в КОРНЕ проекта
+const DB_PATH = path.join(__dirname, '..', '..', '..', 'people.json');
 
-    static read() {
-        try {
-            const file = this.db.readFile();
-            return file.trim() ? JSON.parse(file) : [];
-        } catch (err) {
-            if (err.code === 'ENOENT') return [];
-            throw err;
-        }
-    }
-
-    static write(data) {
-        this.db.writeFile(JSON.stringify(data, null, 2));
+function ensureFileExists() {
+    if (!fs.existsSync(DB_PATH)) {
+        fs.writeFileSync(DB_PATH, '[]', 'utf8');
     }
 }
 
-module.exports = { PeopleRepository };
+function read() {
+    try {
+        ensureFileExists();
+        const data = fs.readFileSync(DB_PATH, 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        console.error('❌ Ошибка чтения people.json:', err.message);
+        return [];
+    }
+}
+
+function write(data) {
+    try {
+        fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf8');
+    } catch (err) {
+        console.error('❌ Ошибка записи people.json:', err.message);
+        throw err;
+    }
+}
+
+module.exports = { read, write };
