@@ -12,7 +12,7 @@
  [2 лабораторка](https://zerocandie.github.io/WEB-STUDY/2laba/dist/Calc.html)
   
 - **Лабораторная работа №3**
-- [3 лабораторка](https://zerocandie.github.io/WEB-STUDY/3laba/index.html)
+ [3 лабораторка](https://zerocandie.github.io/WEB-STUDY/3laba/index.html)
 
 - **Лабораторная работа №4**  
   [4 лабораторка](https://zerocandie.github.io/WEB-STUDY/4laba/index.html)
