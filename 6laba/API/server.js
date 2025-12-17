@@ -44,8 +44,11 @@ app.post('/api/people', (req, res) => {
 
 app.use('/api/people', peopleRouter);
 
-app.get('*', (req, res) => {
+app.use((req, res, next) => {
+    if (req.path.startsWith('/api')) {
+   
+        return res.status(404).json({ error: 'API endpoint not found' });
+    }
     res.sendFile(path.join(__dirname, '..', 'front', 'index.html'));
 });
-
 module.exports = app;
